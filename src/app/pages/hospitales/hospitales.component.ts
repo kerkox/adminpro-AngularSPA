@@ -2,7 +2,6 @@ import { ModalUploadService } from './../../components/modal-upload/modal-upload
 import { HospitalService } from './../../services/service.index';
 import { Component, OnInit } from '@angular/core';
 import { Hospital } from '../../models/hospital.model';
-import { URL_SERVICIOS } from '../../config/config';
 
 declare var swal: any;
 

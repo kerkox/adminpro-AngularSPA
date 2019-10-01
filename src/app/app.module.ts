@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -18,6 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
+import { PagesComponent } from './pages/pages.component';
 
 
 @NgModule({
@@ -28,7 +30,7 @@ import { RegisterComponent } from './login/register.component';
     // DashboardComponent,
     // ProgessComponent,
     // Graficas1Component,
-    // PagesComponent,
+    PagesComponent,
 
     // NopagefoundComponent,
     // HeaderComponent,
@@ -40,10 +42,10 @@ import { RegisterComponent } from './login/register.component';
     BrowserModule,
     AppRoutingModule,
     APP_ROUTES,
-    PagesModule,
     FormsModule,
     ReactiveFormsModule,
-    ServicesModule
+    ServicesModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

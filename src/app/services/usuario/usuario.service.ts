@@ -8,6 +8,7 @@ import { map, catchError } from 'rxjs/operators';
 import { SubirArchivoService } from '../subirArchivo/subir-archivo.service';
 import { of } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -23,6 +24,21 @@ export class UsuarioService {
     public _subirArchivoService: SubirArchivoService
   ) {
     this.cargarStorage();
+   }
+
+   renuevaToken() {
+     const url = URL_SERVICIOS + '/login/renuevatoken?token=' + this.token;
+
+     return this.http.get( url )
+     .pipe(map( (resp: any) => {
+       this.token = resp.token;
+       localStorage.setItem('token', this.token );
+       return true;
+     }))
+     .pipe(catchError( err => of([
+       swal('No se pudo renovar token', 'No fue posible renovar token', 'error'),
+       this.router.navigate(['/login'])
+     ])));
    }
 
    estaLogueado() {

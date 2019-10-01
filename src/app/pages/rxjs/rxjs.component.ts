@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { retry, map, filter } from 'rxjs/operators';
+import { map, filter } from 'rxjs/operators';
 import { Subscriber } from 'rxjs/internal/Subscriber';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 
 @Component({
